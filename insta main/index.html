@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Story UI</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #161616;
+        }
+
+        .container {
+            height: 100%;
+            width: 30%;
+            background-color: #000;
+            border-radius: 10px;
+            color: white;
+            position: relative;
+        }
+
+        .header {
+            width: 100%;
+            height: 70px;
+            padding: 10px 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .instagram-logo {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .header-icons {
+            font-size: 24px;
+            display: flex;
+            gap: 20px;
+            cursor: pointer;
+        }
+
+        .stories {
+            display: flex;
+            padding: 10px;
+            gap: 15px;
+            overflow-x: auto;
+            cursor: pointer;
+            border-bottom: 1px solid #262626;
+        }
+
+        .stories::-webkit-scrollbar {
+            display: none;
+        }
+
+        .story {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .story-ring {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            padding: 2px;
+        }
+
+        .my-story-ring {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: #262626;
+            padding: 2px;
+        }
+
+        .story-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid #000;
+            object-fit: cover;
+        }
+
+        .my-story-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid #000;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        .story-username {
+            font-size: 12px;
+            color: #fff;
+            max-width: 65px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: center;
+        }
+
+        .add-stry {
+            font-size: 24px;
+            position: sticky;
+            transform: translateY(-20px) translateX(45px);
+            color: #0095f6;
+            background: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .instagram-logo i {
+            font-weight: 400;
+            cursor: pointer;
+        }
+
+        .content {
+            height: 60%;
+            background-color: white;
+            width: 100%;
+        }
+
+        .bottom-nav {
+            margin-top: 30px;
+            font-size: 24px;
+            display: flex;
+            justify-content: space-around;
+            border-top: 2px solid #262626;
+            cursor: pointer;
+        }
+
+        .full {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0%;
+            border-radius: 10px;
+            background-size: cover;
+            background-position: center;
+            display: none;
+        }
+
+        .fileInput {
+            position: absolute;
+            text-align: center;
+            background-color: #262626f1;
+            width: 100%;
+            top: 0;
+            height: 100%;
+            display: none;
+        }
+
+        .fileInput input {
+            font-size: larger;
+            position: absolute;
+            top: 50%;
+            left: 25%;
+            cursor: pointer;
+        }
+
+        .fileInput button {
+            font-size: larger;
+            position: absolute;
+            top: 60%;
+            left: 38%;
+            display: none;
+            cursor: pointer;
+        }
+
+        .up{
+            border-top: 3px solid #ffffff;
+            border-radius: 3px;
+            width: 90%;
+            margin: 30px 20px;
+        }
+        .grow{
+            position: absolute;
+            top:30px;
+            height: 3.5px;
+            width: 0%;
+            border-radius: 3px;
+            background-color: #5A5A5A;
+        }
+        .close{
+            height: 60px;
+            width: 100px;
+            background-color: #fff;
+            border-radius: 10px;
+        }
+        .full img{
+            position: absolute;
+            height: 60px;
+            width: 60px;
+            left: 4%;
+            top: 6.8%;
+            border-radius: 50%;
+            border: none;
+        }
+        .full h4{
+            font-weight: 600;
+            position: absolute;
+            top: 9%;
+            left: 18.3%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="instagram-logo">Instagram <i class="ri-arrow-down-s-line"></i></div>
+
+            <div class="header-icons">
+                <span><i class="ri-heart-line"></i></span>
+                <span><i class="ri-send-plane-fill"></i></span>
+            </div>
+        </div>
+
+        <div class="stories">
+            <div class="story">
+                <div class="my-story-ring">
+                    <img src="https://images.unsplash.com/photo-1591260035149-2829f11fdefe?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmlrZXJ8ZW58MHx8MHx8fDA%3D"
+                        class="my-story-image">
+                    <div class="add-stry"><i class="ri-add-circle-fill"></i></div>
+                </div>
+                <span class="story-username">Your story</span>
+            </div>
+        </div>
+        <div class="content"></div>
+        <div class="bottom-nav">
+            <span><i class="ri-home-4-line"></i></span>
+            <span><i class="ri-search-line"></i></span>
+            <span><i class="ri-add-box-line"></i></span>
+            <span><i class="ri-tv-2-line"></i></span>
+            <span><i class="ri-account-circle-line"></i></span>
+        </div>
+        <div class="full">
+            <div class="up"><div class="grow"></div></div>
+            <img class="story-image" src="">
+            <h4></h4>
+        </div>
+        <div class="fileInput"><input type="file" id="fileInput" multiple>
+            <button class="close">Close</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
