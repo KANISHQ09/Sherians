@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>warrivo</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.4.0/fonts/remixicon.css" rel="stylesheet"/>
+    
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #121212;
+            color: white;
+        }
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+        .nav-items {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .nav-item {
+            color: #888;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .nav-item:hover{
+            cursor: pointer;
+            color: white;
+            font-weight: 500;
+        }
+        .search-bar {
+            background-color: #2a2a2a;
+            border-radius: 20px;
+            padding: 5px 15px;
+            display: flex;
+            align-items: center;
+            width: 60%;
+        }
+        .search-bar input {
+            background: none;
+            border: none;
+            color: white;
+            outline: none;
+            font-size: 14px;
+        }
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-right: 2%;
+        }
+        .coins button{
+            font-size: 18px;
+            font-weight: 500;
+            border: 0;
+            padding: 8px 15px;
+            background: linear-gradient(red, rgb(255, 115, 97));
+            border-radius: 10px;
+        }
+        
+        .coins button:hover{
+            color: whitesmoke;
+            cursor: pointer;
+            scale: 1.05;
+        }
+        .coins button:hover::after{
+            width: 100%;
+        }
+        .coins button::after{
+            content: '';
+            height: 100%;
+            width: 0%;
+            background-color: #2a2a2a;
+            border-radius: 10px;
+            border: 2px solid whitesmoke;
+            position:absolute;
+            left: 0%;
+            top: -2px;
+            z-index: -1;
+            transition: all ease 0.5s;
+        }
+        
+        .coin-icon {
+            width: 20px;
+            height: 20px;
+            background-color: #FFD700;
+            border-radius: 50%;
+        }
+        .user-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #444;
+            transition: all ease 0.5s;
+        }
+        .user-avatar:hover{
+            scale: 1.5;
+            background-color: black;
+            cursor: pointer;    
+        }
+        .user-avatar i{
+            display: flex;
+            margin-top: 3px;
+            justify-content: center;
+            align-items: center;
+        }
+        main {
+            text-align: center;
+            padding: 25px 0;
+        }
+        h1 {
+            font-size: 80px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        p {
+            color: #888;
+            font-size: 20px;
+            margin-bottom: 40px;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .game-cards {
+            width: 100%;
+            height: 400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            position: relative;
+        }
+        .game-card {
+            top: 20%;
+            background-color: #4158D0;
+            border: 3px solid #444;
+            border-radius: 20px;
+            padding: 20px;
+            width: 250px;
+            height: 350px;
+            text-align: left;
+            position: absolute;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+        .game-card:nth-child(1) { transform: translateX(-450px) translateY(100px) rotate(-20deg); }
+        .game-card:nth-child(2) { transform: translateX(-250px) translateY(10px) rotate(-10deg); }
+        .game-card:nth-child(3) { transform: translateY(-50px) scale(1.05); z-index: 5; }
+        .game-card:nth-child(4) { transform: translateX(250px) translateY(10px) rotate(10deg); z-index: 4; }
+        .game-card:nth-child(5) { transform: translateX(450px) translateY(100px) rotate(20deg); z-index: 3; }
+        .game-card:hover {
+            transform: translateY(-50px) scale(1.05);
+            z-index: 10;
+            box-shadow: 0 16px 32px rgba(0,0,0,0.3);
+        }
+        .game-card:nth-child(1):hover { transform: translateX(-500px) translateY(-30px) scale(1.05); }
+        .game-card:nth-child(2):hover { transform: translateX(-250px) translateY(-40px) scale(1.05); }
+        .game-card:nth-child(3):hover { transform: translateY(-50px) scale(1.2); }
+        .game-card:nth-child(4):hover { transform: translateX(250px) translateY(-40px) scale(1.05); }
+        .game-card:nth-child(5):hover { transform: translateX(500px) translateY(-30px) scale(1.05); }
+        .game-card img {
+            width: 120%;
+            height: 120%;
+            position: absolute;
+            bottom: -20px;
+            left: -10%;
+            object-fit: cover;
+        }
+        .game-card h3 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+        .game-card .rating {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: rgba(255, 255, 255, 0.452);
+            color: rgba(0, 0, 0, 0.756);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 600;
+            z-index: 1;
+        }
+        @media (max-width: 1200px) {
+            .game-cards {
+                height: auto;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+            }
+            .game-card {
+                position: relative;
+                margin: 10px;
+                transform: none;
+            }
+            .game-card:nth-child(3) {
+                transform: scale(1.05);
+            }
+            .game-card:hover {
+                transform: translateY(-20px) scale(1.05) ;
+            }
+        }
+        @media (max-width: 768px) {
+            .game-card {
+                width: calc(50% - 20px);
+                height: 240px;
+            }
+        }
+        @media (max-width: 480px) {
+            .game-card {
+                width: 100%;
+                height: 260px;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="nav-items">
+                <a href="#" class="nav-item">Games</a>
+                <a href="#" class="nav-item">Store</a>
+                <div class="search-bar">
+                    <i class="ri-search-line" style="margin-right: 5px;"></i>
+                    <input type="text" placeholder="Search Games..."><i class="ri-equalizer-2-line"></i>
+                </div>
+            </nav>
+           
+            <div class="user-info">
+                <div class="coins">
+                    <button>𝖯𝖫𝖠𝖸 𝖭𝖮𝖶</button>
+                </div>
+                <div class="user-avatar"><i class="ri-gamepad-line"></i></div>
+            </div>
+        </header>
+        <main>
+            
+            <h1>山卂尺尺IᐯӨ</h1><h2>RΣDΣFIПΣ GΛMIПG</h2>
+            <p>Immerse yourself in a rich and ever-expanding universe where a vibrant array of products converge into an interconnected overlay experience on your world.</p>
+            <div class="game-cards">
+                <div class="game-card">
+                    <h3>FӨRƬПIƬΣ</h3>
+                    <div class="rating">4.8</div>
+                    <img src="https://media.wired.com/photos/5da4957dcdc4580008379b48/master/pass/Culture_Monitor_Fortnite_S10_KeyArt.jpg" alt="Fortnite">
+                </div>
+                <div class="game-card">
+                    <h3>匚Y乃乇尺PЦ几Ҝ</h3>
+                    <div class="rating">4.9</div>
+                    <img src="https://gameranx.com/wp-content/uploads/2022/04/cyberpunk-2077.jpg" alt="C77">
+                </div>
+                <div class="game-card">
+                    <h3>STᗩᖇᖴIEᒪᗪ</h3>
+                    <div class="rating">4.7</div>
+                    <img src="https://p2.trrsf.com/image/fget/cf/1200/1200/middle/images.terra.com/2023/09/04/starfield-intothestarfield_wallpaper_2560x1440-01-1jyajqo4c04zd.jpg" alt="STARFIELD">
+                </div>
+                <div class="game-card">
+                    <h3>TᕼE ᗯITᑕᕼEᖇ-3</h3>
+                    <div class="rating">4.3</div>
+                    <img src="https://static1.srcdn.com/wordpress/wp-content/uploads/2024/04/witcher-3-geralt-of-rivia-keyart.jpg" alt="WITCHER">
+                </div>
+                <div class="game-card">
+                    <h3>VДLФRДЙҬ</h3>
+                    <div class="rating">4.6</div>
+                    <img src="https://img.redbull.com/images/c_limit,w_1500,h_1000/f_auto,q_auto/redbullcom/2020/4/19/d1jrdrpou7hvstulfozq/red-bull-campus-clutch-valorant-agents-phoenix-jett" alt="VALO">
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
