@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+.main {
+    height: 85%;
+    width: 100%;
+    background-color:rgb(223, 223, 223);
+}
+
+.half {
+    top: 0;
+    left: 60%;
+    height: 100%;
+    position: absolute;
+    right: 10%;
+    background-image: url(https://fuckingyoung.es/wp-content/uploads/2014/09/Bei-Kuo-SS15-Lookbook_fy12.jpg);
+    background-size: cover;
+}
+
+.circle {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+    top: 60%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0.825);
+}
+
+#play {
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.94);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.side {
+    height: 50%;
+    position: absolute;
+    top: 0;
+    left: 90%;
+    right: 0;
+}
+
+.top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: red;
+}
+
+.bottom {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(24, 24, 24);
+}
+
+#nike {
+    height: 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    background-color:black;
+}
+#logo{
+    height: 15%;
+    width: 8%;
+    position: absolute;
+    top: 0;
+    left: 5%;
+}
+.ni{
+    position: absolute;
+    left: 5%;
+    top: 65%;
+    font-family: "helvetica";
+    font-size: 80px;
+    letter-spacing: 50px;
+}
+.ke{
+    position: absolute;
+    top: 80%;
+    left: 5%;
+    font-family: "helvetica";
+    font-size: 80px;
+    letter-spacing: 50px;
+}
+.one{
+    position: absolute;
+    left: 30%;
+    font-family: "comic sans ms";
+    font-size: 15px;
+    color: white;
+    letter-spacing: 20px;
+}
+.two{
+    position: absolute;
+    left: 45%;
+    font-family: "comic sans ms";
+    font-size: 15px;
+    color: white;
+    letter-spacing: 20px;
+    
+}
+#search{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 20px;
+    color: white;
+}
+.tw{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%) rotate(-90deg);
+    font-family: "comic sans ms";
+    font-size: 20px;
+    color: white;
+    letter-spacing: 10px;
+}
+
+.in{
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    transform: translate(-50%,-50%)rotate(-90deg);
+    font-family: "comic sans ms";
+    font-size: 20px;
+    color: white;
+    letter-spacing: 10px;
+}
+
+.fb{
+    position: absolute;
+    left: 50%;
+    top: 90%;
+    transform: translate(-50%,-50%)rotate(-90deg);
+    font-family: "comic sans ms";
+    font-size: 20px;
+    color: white;
+    letter-spacing: 10px;
+}
