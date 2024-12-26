@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(182, 221, 255);
+        }
+
+        .card2 img{
+            height: 300px;
+            width: 450px;
+            background-color: black;
+            margin-left: 100px;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+
+        .card1 img{
+            height: 300px;
+            width: 450px;
+            margin-right: 100px;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+
+        button {
+            padding: 20px 25px;
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+            background-color: rgb(0, 91, 196);
+            border: 3px solid rgb(0, 0, 0);
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        button i{
+            font-size: 18px;
+            font-weight: 500;
+        }
+        button:active {
+            scale: 0.95;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card1">
+        <img class='one' src="https://images.unsplash.com/photo-1665042055535-c871b6ed4215?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDI2fHx8ZW58MHx8fHx8">
+    </div>
+
+    <button>SWAP<br><i class="ri-arrow-left-right-line"></i></button>
+    
+    <div class="card2">
+        <img class="two" src="https://images.unsplash.com/photo-1665041982909-8a86864a1e49?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDMwfHx8ZW58MHx8fHx8">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
