@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(165, 213, 255);
+        }
+
+        .card {
+            height: 300px;
+            width: 500px;
+            background-color: white;
+            border-radius: 20px;
+        }
+
+        .slide {
+            margin:100px 50px;
+            height: 20px;
+            width: 80%;
+            border-radius: 20px;
+            background-color: rgb(183, 183, 183);
+        }
+        .grow{
+            height: 20px;
+            width: 0%;
+            border-radius: 20px;
+            background-color: rgb(15, 196, 30);
+
+        }
+        .percent{
+            display: flex;
+            justify-content: space-between;
+            margin: 0 50px;
+        }
+        .percent h1{
+            font-size: 45px;
+        }
+        .percent button{
+            width: 150px;
+            font-size: 20px;
+            border-radius: 10px;
+            background-color: greenyellow;
+            font-weight: bolder;
+            border: 3px solid black;
+            cursor: pointer;
+        }
+        button:active{
+            scale: 0.95;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="slide"><div class="grow"></div></div>
+        <div class="percent">
+            <h1>0%</h1>
+            <button>Download</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
