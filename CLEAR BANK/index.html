@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            font-family: 'Helvetica_Now_Display', sans-serif;
+
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .header {
+            width: 100%;
+            height: 5%;
+            margin-top: 2%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            margin-left: 5%;
+            font-size: 2.3rem;
+            font-weight: 500;
+        }
+
+        .nav {
+            display: flex;
+            margin-right: 2%;
+            gap: 2rem;
+            font-size: 1.25rem;
+            font-weight: 400;
+        }
+
+        .nav-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: black;
+            transition: color 0.3s;
+        }
+
+        .nav-item:hover {
+            color: #06b6d4;
+        }
+
+        .button {
+            padding: 0.5rem 1.25rem;
+            background-color: #90f5e3;
+            border-radius: 20px;
+            color: black;
+            text-decoration: none;
+            font-weight: 400;
+        }
+
+
+        .button:hover {
+            background-color: #06b6d4;
+            color: white;
+        }
+
+        .hero-section {
+            margin-top: 10%;
+            font-family: 'Helvetica_Now_Display', sans-serif;
+        }
+
+        .headline {
+            margin-left: 5%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .headline-text {
+            font-size: 6rem;
+            font-weight: 400;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button {
+            height: 40px;
+            font-size: 1.25rem;
+            width: auto;
+            font-weight: 500;
+            background-color: black;
+            color: white;
+            padding: 0.5rem 1.25rem;
+            margin-right: 2rem;
+            margin-top: 20%;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #06b6d4;
+        }
+
+        .video-container {
+            width: 100%;
+            height: 70%;
+            margin-top: 2rem;
+            margin-left: 0;
+            overflow: hidden;
+            border-radius: 5rem 5rem 0 0;
+        }
+
+        .video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: bottom;
+        }
+
+        .svg-container {
+            width: 100%;
+            overflow: auto;
+        }
+
+        .svg-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .svg-track {
+            display: flex;
+            gap: 10%;
+            animation: moveSvg 20s linear infinite;
+
+        }
+
+        .svg-icon {
+            width: 150px;
+            height: 150px;
+        }
+
+        @keyframes moveSvg {
+            from {
+                transform: translateX(110%);
+            }
+
+            to {
+                transform: translateX(-150%);
+            }
+        }
+
+        .content {
+            margin-top: 3%;
+            margin-left: 5%;
+            margin-right: 10%;
+            margin-bottom: 5%;
+            width: 58%;
+            font-family: 'Helvetica Now Display', sans-serif;
+            font-weight: normal;
+            font-size: 30px;
+        }
+
+        .content .highlight {
+            color: #9CA3AF;
+        }
+
+        .product-section {
+            margin-top: 5%;
+            margin-left: 5%;
+            margin-right: 5%;
+            width: 50%;
+            font-family: 'Helvetica Now Display', sans-serif;
+            font-weight: normal;
+        }
+
+        .product-intro .title {
+            font-size: 2rem;
+            font-weight: 400;
+        }
+
+        .product-intro .product-range {
+            font-size: 1.875rem;
+            margin-top: 10%;
+        }
+
+        .product-intro .highlight {
+            color: #9CA3AF;
+        }
+
+        .product-list {
+            margin-top: 5%;
+            margin-left: 5%;
+            margin-right: 45%;
+            display: inline;
+        }
+
+        .one,
+        .two,
+        .three {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #9CA3AF;
+            font-size: 3rem;
+            transition: color 0.3s;
+            cursor: pointer;
+            margin-bottom: 5%;
+            width: 100%;
+        }
+
+        .product-section button {
+            border: none;
+            background-color: transparent;
+        }
+
+        .one i,
+        .two i,
+        .three i {
+            display: none;
+        }
+
+        .one:hover,
+        .two:hover,
+        .three:hover {
+            color: #000;
+        }
+
+        .one:hover i,
+        .two:hover i,
+        .three:hover i {
+            display: block;
+            color: #000;
+        }
+
+        .card {
+            width: 37%;
+            background-color: #e5e5e5;
+            border-radius: 5%;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .video-wrapper video {
+            margin-top: 20px;
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .opone {
+            margin: 10% 20px 0;
+            font-size: 1.25rem;
+            color: #000;
+        }
+
+        .getbtn {
+            padding: 12px 24px;
+            margin: 6% 20px 20px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .getbtn:hover {
+            background-color: #06b6d4;
+            color: #fff;
+        }
+
+        .opall {
+            display: flex;
+        }
+
+        .h-screen {
+            margin-top: 105%;
+            height: 100vh;
+            display: flexbox;
+            flex-direction: column;
+            justify-content: start;
+            align-items: start;
+            padding-left: 5%;
+        }
+
+        .lg1 {
+            font-size: 1.5rem;
+            margin: 0;
+            font-weight: 400;
+        }
+
+        .lg2 {
+            font-size: 4rem;
+            font-weight: 500;
+            margin-top: 0.75rem;
+        }
+
+        .text-content {
+            font-size: 1.4rem;
+            margin-top: 1.5%;
+            max-width: 70ch;
+        }
+
+        .explore-button {
+            margin-top: 5%;
+            font-size: 1.12rem;
+            padding: 0.75rem 1.5rem;
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        .explore-button:hover {
+            color: white;
+            background-color: rgb(37, 144, 152);
+
+        }
+
+        .lg2 {
+            background: linear-gradient(rgb(255, 73, 94), rgb(255, 108, 160));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+
+        }
+
+        .parts {
+            display: flex;
+        }
+
+        .oi {
+            margin-top: 8%;
+            width: 45%;
+            border-radius: 5%;
+            object-fit: cover;
+            overflow: hidden;
+        }
+
+        .oi img {
+            width: 100%;
+            height: auto;
+        }
+
+        .ot {
+            width: 45%;
+            margin-top: 8%;
+            margin-left: 5%;
+        }
+
+        .ot h2 {
+            font-weight: 500;
+        }
+
+        .ot h1 {
+            font-size: 65px;
+            font-weight: 500;
+        }
+
+        .ot p {
+            margin-top: 2%;
+            font-size: 22px;
+        }
+
+        .wmain {
+            margin-top: 10%;
+            display: flex;
+        }
+
+        .wcc {
+            width: 40%;
+            margin-right: 10%;
+        }
+
+        .wcc h1 {
+            font-size: 60px;
+            font-weight: 500;
+        }
+
+        .wcc p {
+            margin-top: 2%;
+            font-size: 30px;
+        }
+
+        .function {
+            width: 45%;
+        }
+
+        .function h2 {
+            margin-top: 2%;
+            font-size: 50px;
+            font-weight: 500;
+        }
+
+        .function p {
+            margin-top: 2%;
+            font-size: 18px;
+            margin-bottom: 10%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="brand">Clea𝗋.Bапk</div>
+            <div class="nav">
+                <a href="#" class="nav-item">Products<i class="ri-arrow-down-s-line"></i></a>
+                <a href="#" class="nav-item">Our Clients</a>
+                <a href="#" class="nav-item">About<i class="ri-arrow-down-s-line"></i></a>
+                <a href="#" class="nav-item">News</a>
+                <a href="#" class="button">Begin <i class="ri-arrow-right-up-line"></i></a>
+            </div>
+        </div>
+
+        <div class="hero-section">
+            <div class="headline">
+                <h1 class="headline-text">
+                    Innovate.<br>
+                    Differentiate.<br>
+                    Grow.
+                </h1>
+                <div class="cta-button">Begin<i class="ri-arrow-right-up-line"></i>
+                </div>
+            </div>
+            <div class="video-container">
+                <video autoplay muted loop src="1vid.mp4" class="video"></video>
+            </div>
+        </div>
+
+        <div class="svg-container">
+            <div class="svg-track">
+                <img class="svg-icon" src="Allica-Bank-Logo-V2.svg" alt="Allica Bank Logo">
+                <img class="svg-icon" src="Chip.svg">
+                <img class="svg-icon" src="Coinbase-2.svg">
+                <img class="svg-icon" src="Tide_2022-05-23-154717_ibot.svg">
+                <img class="svg-icon" src="TrueLayer-Logo.svg">
+                <img class="svg-icon" src="Wealthify-Logo.svg">
+                <img class="svg-icon" src="Paypoint-2.svg" alt="Paypoint Logo">
+                <img class="svg-icon" src="eToro.svg" alt="eToro Logo">
+            </div>
+        </div>
+        <div class="content">
+            <p>
+                Financial institutions — from fintechs and digital asset platforms, to banks and credit unions —
+                <span class="highlight">
+                    use our API to offer their customers fully regulated banking infrastructure and real-time clearing
+                    access.
+                </span>
+                That way the business can grow on your own terms, and stay ahead — at speed.
+            </p>
+        </div>
+        <div class="opall">
+            <div class="product-section">
+                <div class="product-intro">
+                    <h1 class="title">Our Products</h1>
+                    <div id="p">
+                        <p class="product-range">01<span class="highlight"> - 03</span></p>
+                    </div>
+                </div>
+                <div class="product-list">
+                    <button class="one">
+                        <p>Accounts</p><i class="ri-arrow-right-line"></i>
+                    </button>
+                    <button class="two">
+                        <p>Clearing</p><i class="ri-arrow-right-line"></i>
+                    </button>
+                    <button class="three">
+                        <p>Embedded Banking</p><i class="ri-arrow-right-line"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="video-wrapper">
+                    <video autoplay muted loop>
+                        <source src="./2vid.webm" type="video/webm">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="opone">
+                    <p>Choose the fully regulated accounts that work best for your business and your customers.</p>
+                </div>
+                <button class="getbtn">Get Started <i class="ri-arrow-right-up-line"></i></button>
+            </div>
+        </div>
+
+    </div>
+    <div class="h-screen">
+        <h2 class="lg1">Driven by technology</h2>
+        <br>
+        <div class="lg2">
+            <span>Be part of the future of</span><br>
+            <span>banking with our API</span>
+        </div>
+        <div class="text-content">
+            <p>With our cloud-based API, we offer banking infrastructure so financial institutions can focus on
+                providing the best service for their customers and stay relevant in a fast-paced market.</p>
+            <button class="explore-button">
+                Explore Our API <i class="ri-arrow-right-up-line"></i>
+            </button>
+        </div>
+        <div class="parts">
+            <div class="oi">
+                <img src="photo.webp">
+            </div>
+            <div class="ot">
+                <h2>Powered by people</h2><br>
+                <h1>Your partner in growth</h1>
+                <p>We understand the pain of dealing with legacy systems, the cost and the risk involved in innovating
+                    in the financial services sector. That's why we set up ClearBank. We're built to support you. That
+                    means no shared propositions, no customer overlap and no competition. Your growth is our growth.</p>
+            </div>
+        </div>
+
+        <div class="wmain">
+            <div class="wcc">
+                <h1>Why choose ClearBank</h1>
+                <p>Financial technology with a banking licence, and expert guidance</p>
+            </div>
+            <div class="function">
+                <div class="f1">
+                    <img src="https://clear.bank/uploads/Icons/5.svg">
+                    <h2>Cloud-based API</h2>
+                    <p>Our cloud-based systems make opening and managing accounts easy and let you clear payments in
+                        real-time. Bank better, work smarter and grow faster.</p>
+                </div>
+                <div class="f2">
+                    <img src="https://clear.bank/uploads/Icons/PoweredbyPeople.svg">
+                    <h2>Powered by people</h2>
+                    <p>You'll get a dedicated relationship manager who understands your business and knows your industry
+                        inside out. Backed by a team of specialists, we're always on hand to offer solutions and
+                        support.</p>
+                </div>
+                <div class="f3">
+                    <img src="https://clear.bank/uploads/Icons/SafeHereTo-Stay.svg">
+                    <h2>Safe and here to stay</h2>
+                    <p>ClearBank is a fully regulated bank in both the United Kingdom and Europe, meaning we hold funds
+                        securely at the Bank of England and the European Central Bank.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
